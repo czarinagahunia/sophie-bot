@@ -9,6 +9,12 @@
   "author": "cghn",
   "license": "ISC",
   "dependencies": {
-    "discord.js": "^11.4.2"
+    "discord.js": "^11.4.2",
+    "discord.js-commando": "^0.10.0",
+    "ffmpeg": "0.0.4",
+    "ffmpeg-binaries": "^3.2.2-3",
+    "opusscript": "0.0.6",
+    "prism-media": "^1.0.2",
+    "ytdl-core": "^0.29.2"
   }
 }
