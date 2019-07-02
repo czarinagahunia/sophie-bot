@@ -1,5 +1,15 @@
-const Discord = require('discord.js');
-const bot = new Discord.Client();
+const DCommando = require('discord.js-commando');
+const bot = new DCommando.Client();
+
+//Make a group of commands for music which is to be put in separate folder
+bot.registry.registerGroup('music','Music');
+bot.registry.registerGroup('random', 'Random');
+bot.registry.registerGroup('admin', 'Admin');
+
+bot.registry.registerDefaults(); //lists down functionality of the command
+bot.registry.registerCommandsIn(__dirname + '/commands'); //location where the commands will be put
+
+global.servers = {};
 
 //Bot connects to the server
 bot.on('ready', () => {
@@ -24,6 +34,5 @@ bot.on('guildMemberAdd', newMember => {
     
     welcomeChannel.send(`Welcome, ${newMember}:tada:! Thank you for joining :sparkles:**${newMember.guild.name}**:sparkles:! Please read the ${rulesChannel} before proceeding. Enjoy your stay and have fun:smile:!`);
 });//end of guildMemberAdd event
-
 
 bot.login(process.env.BOT_TOKEN); //Bot's token must be hidden for security reasons
